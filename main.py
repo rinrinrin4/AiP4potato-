@@ -1,29 +1,25 @@
 Pass=input("Введите пароль: ")
 Dpass=input("Подтвердите пароль: ")
-if len(Pass) < 6:
-    print("Ошибка, мало символов")
 
-if Dpass == Pass :
+if Dpass == Pass and len(Pass) > 6:
     print("Пароль принят.")
+elif len(Pass) < 6:
+    print("Ошибка, мало символов")
 else:
     print("Пароль не принят.")
 
 
 
-    nv= int(input("Ввидите номер места: "))
+nv= int(input("Ввидите номер места: "))
+if not (1 <= nv <= 54):
+    print("места не существует")
+elif  nv > 36 and nv < 55:
+    print("Ваше место - боковое")
+elif nv % 2:
+    print("Ваше место на верхней полке")
+else:
+    print("Ваше место на нижней полке")
 
-    if nv % 2 == 0:
-        print("Ваше место на верхней полке")
-    else:
-        print("Ваше место на нижней полке")
-
-    if nv < 36 and nv < 55:
-        print("Ваше место - боковое")
-    else:
-        print("места не существует")
-
-    if int(nv) <= 0 :
-            print("места не существует")
 
 
 
