@@ -63,9 +63,35 @@ def schastliviy_bilet(nomer):
     else:
         return False
 
+def schastliviy_bilet(nomer):
+    dlinna = len(nomer)
+
+    if dlinna %2 !=0:
+
+        return None
+
+    polovina = dlinna // 2
+
+
+    summa1 = 0
+    for i in range(polovina):
+        summa1 = summa1 + int(nomer[i])
+
+    summa2 = 0
+    for i in range(polovina, dlinna):
+        summa2 = summa2 + int(nomer[i])
+
+    if summa1 == summa2:
+        return True
+    else:
+        return False
+
 
 n = input("Введите номер билета: ")
-if schastliviy_bilet(n):
+res=schastliviy_bilet(n)
+if res is None:
+    print("Ошибка!Число нечетное!")
+elif res:
     print("Счастливый билет!")
 else:
     print("Несчастливый билет")
